@@ -15,10 +15,11 @@ import {
 import MenuIcon from "@mui/icons-material/Menu";
 import AdbIcon from "@mui/icons-material/Adb";
 import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function AppBar() {
   const pages = ["Portfolio", "Blog"];
-  const settings = ["Profile", "Account", "Dashboard", "Logout"];
+  const settings = ["About Me", "Login"];
 
   const [anchorElNav, setAnchorElNav] = useState(null);
   const [anchorElUser, setAnchorElUser] = useState(null);
@@ -53,7 +54,7 @@ export default function AppBar() {
             sx={{
               mr: 2,
               display: { xs: "none", md: "flex" },
-              fontFamily: "monospace",
+              fontFamily: "Quicksand, monospace, sans-serif",
               fontWeight: 700,
               letterSpacing: ".3rem",
               color: "inherit",
@@ -94,7 +95,8 @@ export default function AppBar() {
             >
               {pages.map((page) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
+                  <Link to={page}>{page}</Link>
+                  {/* <Typography textAlign="center">{page}</Typography> */}
                 </MenuItem>
               ))}
             </Menu>
@@ -109,7 +111,7 @@ export default function AppBar() {
               mr: 2,
               display: { xs: "flex", md: "none" },
               flexGrow: 1,
-              fontFamily: "monospace",
+              fontFamily: "Quicksand, monospace, sans-serif",
               fontWeight: 700,
               letterSpacing: ".3rem",
               color: "inherit",
@@ -125,7 +127,8 @@ export default function AppBar() {
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: "white", display: "block" }}
               >
-                {page}
+                <Link to={page}>{page}</Link>
+                {/* {page} */}
               </Button>
             ))}
           </Box>
