@@ -4,25 +4,26 @@ import { useParams, useNavigate, useLocation } from "react-router-dom";
 import { Button, CardActions, CardContent, Typography } from "@mui/material";
 import { getProject } from "../data";
 
-export default function ProjectCard() {
+export default function ProjectCard(props) {
   let params = useParams();
   let navigate = useNavigate();
-  let project = getProject(parseInt(params.id, 10));
+  // let project = getProject(parseInt(props.id, 10));
   let location = useLocation();
 
   return (
-    <Card sx={{ minWidth: 275 }}>
+    // <h1>{props.project.title}</h1>
+    <Card sx={{ minWidth: 275, display: "flex", flexDirection: "column" }}>
       <CardContent>
         <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-          Project {project.projectId}
+          Project {props.project.projectId}
         </Typography>
         <Typography variant="h5" component="div">
-          {project.title}
+          {props.project.title}
         </Typography>
         <Typography sx={{ mb: 1.5 }} color="text.secondary">
-          {project.techStack}
+          {props.project.techStack}
         </Typography>
-        <Typography variant="body2">{project.Description}</Typography>
+        <Typography variant="body2">{props.project.Description}</Typography>
       </CardContent>
       <CardActions>
         <Button

@@ -20,6 +20,20 @@ let projects = [
     Description: "Project Description",
     Abstract: "Project Abstract",
   },
+  {
+    title: "Project 4",
+    projectId: 4,
+    techStack: "Vue + Express",
+    Description: "Project Description",
+    Abstract: "Project Abstract",
+  },
+  {
+    title: "Project 5",
+    projectId: 5,
+    techStack: "Blazor",
+    Description: "Project Description",
+    Abstract: "Project Abstract",
+  },
 ];
 
 export function getProjects() {
