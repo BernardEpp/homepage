@@ -11,6 +11,7 @@ import {
   Tooltip,
   Avatar,
   MenuItem,
+  linkClasses,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import AdbIcon from "@mui/icons-material/Adb";
@@ -45,7 +46,7 @@ export default function AppBar() {
     <MuiAppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
+          {/* <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} /> */}
           <Typography
             variant="h6"
             noWrap
@@ -101,7 +102,7 @@ export default function AppBar() {
               ))}
             </Menu>
           </Box>
-          <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
+          {/* <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} /> */}
           <Typography
             variant="h5"
             noWrap
@@ -124,8 +125,12 @@ export default function AppBar() {
             {pages.map((page) => (
               <Button
                 key={page}
+                variant="text"
+                color="secondary"
+                size="large"
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: "white", display: "block" }}
+                disableElevation
+                sx={{ my: 2, mx: 2, color: "white", display: "block" }}
               >
                 <Link to={page}>{page}</Link>
                 {/* {page} */}

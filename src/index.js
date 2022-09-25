@@ -5,7 +5,7 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Portfolio from "./routes/Portfolio";
-import { red } from "@mui/material/colors";
+import { blueGrey, grey, red } from "@mui/material/colors";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import { CssBaseline } from "@mui/material";
 import Blog from "./routes/Blog";
@@ -22,7 +22,7 @@ const theme = createTheme({
   },
   palette: {
     primary: {
-      main: red[500],
+      main: grey[800],
     },
   },
 });
